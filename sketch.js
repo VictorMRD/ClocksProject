@@ -11,15 +11,14 @@ function setup() {
   input = createInput();
   input.position(20, 240);
   input.attribute('type', 'time');
-  input.changed(updateTime);
 
   button = createButton('Actualizar');
-  button.position(20, 260);
+  button.position(20, 270);
   button.mousePressed(updateTime);
 }
 
 function draw() {
-  background(220);
+  background(255);
   strokeWeight(2)
   
   if (frameCount % 60 === 0) {
@@ -63,7 +62,7 @@ function drawCircle(xc, yc, r, algorithm, seconds, minutes, hours) {
   let x = r;
   let y = 0;
   let P = 1 - r;
-
+  strokeWeight(1)
   if (algorithm == 0){
     drawFirstClockHand(xc, yc, r, seconds, 0)
     drawFirstClockHand(xc, yc, r, minutes, 2)
@@ -99,11 +98,11 @@ function drawCircle(xc, yc, r, algorithm, seconds, minutes, hours) {
       drawPixel(xc, yc, y, x);
   }
 
-  // Add clock numbers
   textSize(16);
   textAlign(CENTER, CENTER);
   fill("black");
   for (let i = 1; i <= 12; i++) {
+    strokeWeight(0)
     let angle = i * TWO_PI / 12;
     let nx = xc + cos(angle-33) * (r - 20);
     let ny = yc + sin(angle-33) * (r - 20);
