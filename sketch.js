@@ -9,12 +9,12 @@ function setup() {
   background(255);
 
   input = createInput();
-  input.position(20, 220);
-  input.attribute('placeholder', 'Ingrese la hora HH:MM:SS'); 
+  input.position(20, 240);
+  input.attribute('type', 'time');
   input.changed(updateTime);
 
   button = createButton('Actualizar');
-  button.position(20, 240);
+  button.position(20, 260);
   button.mousePressed(updateTime);
 }
 
@@ -50,10 +50,9 @@ function updateTime() {
   let inputValue = input.value();
   let timeArray = inputValue.split(':');
   
-  if (timeArray.length === 3) {
+  if (timeArray.length === 2) {
     hours = int(timeArray[0]);
     minutes = int(timeArray[1]);
-    seconds = int(timeArray[2]);
   } else {
     console.log('Formato de hora no válido. Por favor ingrese la hora en el formato HH:MM:SS');
   }
