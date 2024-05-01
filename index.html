@@ -1,0 +1,66 @@
+<!-- 
+    INTEGRANTES DEL EQUIPO:
+    Víctor Martín Rodríguez Domínguez
+    José Hiram Lopez Camacho
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clocks</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: gray;
+        }
+        .color-meanings {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        .color-meanings h2 {
+            margin-top: 0;
+        }
+        .color-meanings ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .color-meanings li {
+            margin-bottom: 5px;
+        }
+        .seconds {
+            color: red;
+        }
+        .minutes {
+            color: black;
+        }
+        .hours {
+            color: blue;
+        }
+    </style>
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+</head>
+<body>
+    <div class="color-meanings">
+        <h2>Significado de Manillas</h2>
+        <ul>
+            <li>Segundero: <span class="seconds">Rojo</span></li>
+            <li>Minutero: <span class="minutes">Negro</span></li>
+            <li>Horas: <span class="hours">Azul</span></li>
+        </ul>
+        <p>Se puede actualizar dando enter en el input</p>
+    </div>
+    <div style="display: flex; justify-content: center; height: 100vh;">
+        <script src="sketch.js"></script>
+    </div>
+</body>
+</html>
